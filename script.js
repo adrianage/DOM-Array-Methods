@@ -11,7 +11,7 @@ getRandomUser();
 getRandomUser();
 getRandomUser();
 
-//Fetch random user and add money
+// Fetch random user and add money
 
 async function getRandomUser(){
     const res = await fetch('https://randomuser.me/api')
@@ -28,7 +28,16 @@ async function getRandomUser(){
         addData(newUser)
     }
 
-//Add new obj to data arr
+// Double Money Button
+function doubleMoney() {
+    data = data.map ((user) => {
+        return {...user
+        }
+    })
+}
+ 
+    
+// Add new obj to data arr
 function addData(obj) {
     data.push(obj)
 
@@ -54,4 +63,6 @@ function formatMoney(number) {
 }
 
 // Event listeners
-addUserBtn.addEventListener('click', getRandomUser);
+addUserBtn.addEventListener('click', getRandomUser); 
+doubleBtn.addEventListener('click', doubleMoney); 
+
